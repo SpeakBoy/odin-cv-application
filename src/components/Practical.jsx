@@ -23,6 +23,8 @@ function Practical() {
                     End Date:
                     <input type="date" name="work-to" />
                 </label>
+                <button>Edit</button>
+                <button>Submit</button>
             </form>
         </section>
     )

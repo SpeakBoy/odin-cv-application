@@ -19,6 +19,8 @@ function GeneralInfo() {
                     Phone Number:
                     <input type="tel" name="phone" />
                 </label>
+                <button>Edit</button>
+                <button>Submit</button>
             </form>
         </section>
     );

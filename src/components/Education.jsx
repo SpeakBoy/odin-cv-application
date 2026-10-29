@@ -19,6 +19,8 @@ function Education() {
                     End Date:
                     <input type="date" name="study-to" />
                 </label>
+                <button>Edit</button>
+                <button>Submit</button>
             </form>
         </section>
     );
