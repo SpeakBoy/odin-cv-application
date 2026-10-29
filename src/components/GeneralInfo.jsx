@@ -1,8 +1,8 @@
-function GeneralInfo({onSubmit}) {
+function GeneralInfo({ state, onFormSubmit }) {
     return (
         <section id="general">
             <h2>General Information</h2>
-            <form onSubmit={onSubmit}>
+            <form onSubmit={onFormSubmit}>
                 <label>
                     First Name:
                     <input type="text" name="first-name" />
@@ -19,8 +19,8 @@ function GeneralInfo({onSubmit}) {
                     Phone Number:
                     <input type="tel" name="phone" />
                 </label>
-                <button>Edit</button>
-                <button>Submit</button>
+                <button disabled={state === "editing"}>Edit</button>
+                <button disabled={state === "submitted"}>Submit</button>
             </form>
         </section>
     );

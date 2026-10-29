@@ -13,7 +13,7 @@ function Practical() {
                 </label>
                 <label>
                     Main Responsibilities:
-                    <input type="text" name="respnsibilities"/>
+                    <input type="text" name="respnsibilities" />
                 </label>
                 <label>
                     Start Date:
@@ -27,7 +27,7 @@ function Practical() {
                 <button>Submit</button>
             </form>
         </section>
-    )
+    );
 }
 
 export default Practical;
