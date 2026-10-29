@@ -1,8 +1,8 @@
-function GeneralInfo() {
+function GeneralInfo({onSubmit}) {
     return (
         <section id="general">
             <h2>General Information</h2>
-            <form>
+            <form onSubmit={onSubmit}>
                 <label>
                     First Name:
                     <input type="text" name="first-name" />
