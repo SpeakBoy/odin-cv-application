@@ -1,8 +1,8 @@
 function Education({ state, onFormSubmit }) {
     return (
-        <section id="education">
+        <section id="education-input">
             <h2>Educational Experience</h2>
-            <form onSubmit={onFormSubmit}>
+            <form noValidate onSubmit={onFormSubmit}>
                 <label>
                     School Name:
                     <input type="text" name="school-name" />

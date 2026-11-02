@@ -2,6 +2,7 @@ import { useState } from "react";
 import GeneralInfo from "./GeneralInfo.jsx";
 import Education from "./Education.jsx";
 import Practical from "./Practical.jsx";
+import Resume from "./Resume.jsx";
 import "../styles/App.css";
 
 function App() {
@@ -15,12 +16,12 @@ function App() {
     const onGeneralInfoFormSubmit = (e) => {
         e.preventDefault();
 
-        if (!e.target.checkValidity()) {
-            e.target.reportValidity();
-            return;
-        }
-
         if (generalInfoState === "editing") {
+            if (!e.target.checkValidity()) {
+                e.target.reportValidity();
+                return;
+            }
+
             const firstName = e.target["first-name"].value;
             const lastName = e.target["last-name"].value;
             const email = e.target["email"].value;
@@ -43,12 +44,12 @@ function App() {
     const onEducationFormSubmit = (e) => {
         e.preventDefault();
 
-        if (!e.target.checkValidity()) {
-            e.target.reportValidity();
-            return;
-        }
-
         if (educationState === "editing") {
+            if (!e.target.checkValidity()) {
+                e.target.reportValidity();
+                return;
+            }
+
             const schoolName = e.target["school-name"].value;
             const studyTitle = e.target["study-title"].value;
             const studyFrom = e.target["study-from"].value;
@@ -71,12 +72,12 @@ function App() {
     const onPracticalFormSubmit = (e) => {
         e.preventDefault();
 
-        if (!e.target.checkValidity()) {
-            e.target.reportValidity();
-            return;
-        }
-
         if (practicalState === "editing") {
+            if (!e.target.checkValidity()) {
+                e.target.reportValidity();
+                return;
+            }   
+
             const companyName = e.target["company-name"].value;
             const positionTitle = e.target["position-title"].value;
             const responsibilities = e.target["responsibilities"].value;
@@ -104,6 +105,7 @@ function App() {
             <GeneralInfo state={generalInfoState} onFormSubmit={onGeneralInfoFormSubmit} />
             <Education state={educationState} onFormSubmit={onEducationFormSubmit} />
             <Practical state={practicalState} onFormSubmit={onPracticalFormSubmit} />
+            <Resume generalInfo={generalInfo} education={education} practical={practical}/>
         </>
     );
 }

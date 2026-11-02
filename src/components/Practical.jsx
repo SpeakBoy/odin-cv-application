@@ -1,8 +1,8 @@
 function Practical({ state, onFormSubmit }) {
     return (
-        <section id="practical">
+        <section id="practical-input">
             <h2>Practical Experience</h2>
-            <form onSubmit={onFormSubmit}>
+            <form noValidate onSubmit={onFormSubmit}>
                 <label>
                     Company Name:
                     <input type="text" name="company-name" />

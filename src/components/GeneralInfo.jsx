@@ -1,8 +1,8 @@
 function GeneralInfo({ state, onFormSubmit }) {
     return (
-        <section id="general">
+        <section id="general-input">
             <h2>General Information</h2>
-            <form onSubmit={onFormSubmit}>
+            <form noValidate onSubmit={onFormSubmit}>
                 <label>
                     First Name:
                     <input type="text" name="first-name" />
