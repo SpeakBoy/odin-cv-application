@@ -1,8 +1,8 @@
-function Education() {
+function Education({ state, onFormSubmit }) {
     return (
         <section id="education">
             <h2>Educational Experience</h2>
-            <form>
+            <form onSubmit={onFormSubmit}>
                 <label>
                     School Name:
                     <input type="text" name="school-name" />
@@ -19,8 +19,8 @@ function Education() {
                     End Date:
                     <input type="date" name="study-to" />
                 </label>
-                <button>Edit</button>
-                <button>Submit</button>
+                <button disabled={state === "editing"}>Edit</button>
+                <button disabled={state === "submitted"}>Submit</button>
             </form>
         </section>
     );
