@@ -1,8 +1,8 @@
-function Practical() {
+function Practical({ state, onFormSubmit }) {
     return (
         <section id="practical">
             <h2>Practical Experience</h2>
-            <form>
+            <form onSubmit={onFormSubmit}>
                 <label>
                     Company Name:
                     <input type="text" name="company-name" />
@@ -13,7 +13,7 @@ function Practical() {
                 </label>
                 <label>
                     Main Responsibilities:
-                    <input type="text" name="respnsibilities" />
+                    <input type="text" name="responsibilities" />
                 </label>
                 <label>
                     Start Date:
@@ -23,8 +23,8 @@ function Practical() {
                     End Date:
                     <input type="date" name="work-to" />
                 </label>
-                <button>Edit</button>
-                <button>Submit</button>
+                <button disabled={state === "editing"}>Edit</button>
+                <button disabled={state === "submitted"}>Submit</button>
             </form>
         </section>
     );

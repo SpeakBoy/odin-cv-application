@@ -9,10 +9,12 @@ function App() {
     const [generalInfoState, setGeneralInfoState] = useState("editing");
     const [education, setEducation] = useState(null);
     const [educationState, setEducationState] = useState("editing");
+    const [practical, setPractical] = useState(null);
+    const [practicalState, setPracticalState] = useState("editing");
 
     const onGeneralInfoFormSubmit = (e) => {
         e.preventDefault();
-        
+
         if (!e.target.checkValidity()) {
             e.target.reportValidity();
             return;
@@ -64,14 +66,44 @@ function App() {
 
             setEducationState("editing");
         }
-    }
+    };
+
+    const onPracticalFormSubmit = (e) => {
+        e.preventDefault();
+
+        if (!e.target.checkValidity()) {
+            e.target.reportValidity();
+            return;
+        }
+
+        if (practicalState === "editing") {
+            const companyName = e.target["company-name"].value;
+            const positionTitle = e.target["position-title"].value;
+            const responsibilities = e.target["responsibilities"].value;
+            const workFrom = e.target["work-from"].value;
+            const workTo = e.target["work-to"].value;
+
+            setPractical({ companyName, positionTitle, responsibilities, workFrom, workTo });
+            setPracticalState("submitted");
+
+            e.target.reset();
+        } else if (practicalState === "submitted") {
+            e.target["company-name"].value = practical.companyName;
+            e.target["position-title"].value = practical.positionTitle;
+            e.target["responsibilities"].value = practical.responsibilities;
+            e.target["work-from"].value = practical.workFrom;
+            e.target["work-to"].value = practical.workTo;
+
+            setPracticalState("editing");
+        }
+    };
 
     return (
         <>
             <h1>CV Generator</h1>
             <GeneralInfo state={generalInfoState} onFormSubmit={onGeneralInfoFormSubmit} />
             <Education state={educationState} onFormSubmit={onEducationFormSubmit} />
-            <Practical />
+            <Practical state={practicalState} onFormSubmit={onPracticalFormSubmit} />
         </>
     );
 }
